@@ -51,19 +51,13 @@ public class Wishlist {
 			else {
 				System.out.println("Come vuoi ordinare la lista? [nome][destinatario]");
 				String input2 = in.nextLine();
-				if(input2.equals("nome")) {
-					for (String key : nameRecipient.keySet()) {
-						
-						String value = nameRecipient.get(key);
-						System.out.println(key + " --> " + value);
-					}
-				}
-				else {
-					for (String key : nameRecipient.keySet()) {
-						
-						String value = nameRecipient.get(key);
-						System.out.println(value + " --> " + key);
-					}
+				for (String key : nameRecipient.keySet()) {
+					
+					String value = nameRecipient.get(key);
+					if(input2.equals("nome"))
+					System.out.println(key + " --> " + value);
+					else if(input2.equals("destinatario"))
+					System.out.println(value + " --> " + key);
 				}
 				in.close();
 				break;
